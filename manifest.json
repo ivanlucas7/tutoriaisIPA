@@ -1,11 +1,11 @@
 {
-  "name": "Slides Holyrics IPA",
-  "short_name": "Slides IPA",
-  "start_url": "slides.html",
+  "name": "Tutoriais IPAquarius",
+  "short_name": "Tutoriais IPAquarius",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#07154a",
   "theme_color": "#254b99",
-  "description": "Tutoriais e vídeos para projeção de slides na IPA.",
+  "description": "Tutoriais e vídeos para os times IPAquarius.",
   "icons": [
     {
       "src": "assets/icons/icon-192x192.png",
