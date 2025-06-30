@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contato</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/meu.css">
+    <style>
+        body {
+            background: radial-gradient(ellipse at left top, #254b99 60%, #07154a 100%);
+            min-height: 100vh;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            color: #fff;
+        }
+        .navbar {
+            background: transparent !important;
+            box-shadow: none;
+            border: none;
+        }
+        .navbar-brand img {
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background: #fff;
+        }
+        .app-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 38px;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        .app-desc {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            color: #e0f7fa;
+        }
+        .contact-form {
+            background: rgba(255,255,255,0.13);
+            border-radius: 24px;
+            border: 2px solid rgba(255,255,255,0.18);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            color: #fff;
+            padding: 32px 24px 24px 24px;
+            max-width: 400px;
+            margin: 32px auto 0 auto;
+        }
+        .contact-form label {
+            color: #fff;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            color: #003b5c;
+        }
+        .contact-form .btn-primary {
+            background: linear-gradient(90deg, #003b5c 0%, #00c2cb 100%);
+            border: none;
+            border-radius: 16px;
+            font-weight: 600;
+        }
+        footer {
+            position: fixed;
+            left: 0; right: 0; bottom: 0;
+            background: rgba(0,59,92,0.96);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0 6px 0;
+            font-size: 1rem;
+            z-index: 100;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.07);
+        }
+        @media (max-width: 600px) {
+            .app-title { font-size: 1.3rem; }
+            .contact-form { padding: 18px 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Barra de navegação -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+            <img src="assets/img/IPA.jpg" alt="IPAquarius Logo" style="height:32px; width:32px; object-fit:cover; border-radius:50%;">
+        </a>
+    </div>
+</nav>
+
+<!-- Conteúdo principal estilo app -->
+<div class="container text-center">
+    <div class="app-title">Contato</div>
+    <div class="app-desc">
+        Fale com a equipe IPAquarius.
+    </div>
+    <div class="contact-form">
+        <form action="salva_mensagens.php" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensagem</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Rodapé fixo estilo app -->
+<footer>
+    <p>&copy; 2024 Ivan Lucas Arantes. Todos os direitos reservados.</p>
+</footer>
+
+<!-- jQuery -->
+<script src="assets/js/jquery-3.7.1.js"></script>
+<!-- Bootstrap 5 JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
