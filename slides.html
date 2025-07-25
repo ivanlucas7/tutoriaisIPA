@@ -135,10 +135,13 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
-            width: 100%;
-            max-width: 400px;
+            width: 90%;
+            max-width: 300px;
             margin-left: auto;
             margin-right: auto;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .shorts-card iframe {
@@ -146,20 +149,18 @@
             max-width: 320px;
             height: auto;
             aspect-ratio: 9 / 16;
-            border-radius: 12px;
+            border-radius: 12px 12px 0 0;
             border: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: none;
         }
 
         .shorts-card .card-body {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            position: relative;
             width: 100%;
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             border-radius: 0 0 12px 12px;
         }
 
@@ -167,6 +168,37 @@
             font-size: 0.8rem;
             color: #ffffff;
             margin: 0;
+        }
+
+        .description-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .description-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .description-text {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .description-text.show {
+            display: block;
         }
 
         @media (max-width: 600px) {
@@ -226,94 +258,146 @@
         <div class="row justify-content-center">
             <!-- Video Card 1 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">1 - Este tutorial introduz todo o processo que o operador de Holyrics realiza desde a chegada até o início do culto.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/dtk5sUqS8rA" frameborder="0" allowfullscreen title="cortes tutorial holyrics1"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">1 - Tutorial Holyrics - Processo Completo</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Este tutorial introduz todo o processo que o operador de Holyrics realiza desde a chegada até o início do culto.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 2 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">2 - O primeiro passo é ligar o disjuntor geral.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/WSLs1C_QpXQ" frameborder="0" allowfullscreen title="cortes tutorial holyrics2"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">2 - Ligando o Disjuntor Geral</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        O primeiro passo é ligar o disjuntor geral.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 3 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">3 - O segundo passo é ligar o computador.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/IZt9b6qE3xE" frameborder="0" allowfullscreen title="cortes tutorial holyrics3"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">3 - Ligando o Computador</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        O segundo passo é ligar o computador.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 4 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">4 - Para ligar os projetores, você deve ir à cozinha, abrir o painel de energia e ligar os disjuntores específicos para o "cob" e o "projetor".</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/azzni406oN0" frameborder="0" allowfullscreen title="cortes tutorial holyrics4"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">4 - Ligando os Projetores</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Para ligar os projetores, você deve ir à cozinha, abrir o painel de energia e ligar os disjuntores específicos para o "cob" e o "projetor".
+                    </div>
+                </div>
             </div>
             <!-- Video Card 5 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">5 - Com o controle do projetor em mãos, aproximar-se do projetor e apertar o botão de ligar até ele começar a piscar.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/3X2iJBvL0pw" frameborder="0" allowfullscreen title="cortes tutorial holyrics5"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">5 - Usando o Controle do Projetor</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Com o controle do projetor em mãos, aproximar-se do projetor e apertar o botão de ligar até ele começar a piscar.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 6 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">6 - Utilizar o controle para descer o suporte do projetor. Assim que o suporte ultrapassar a linha de referência, pressionar o botão do meio para parar o movimento.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/UTyiH3VT77g" frameborder="0" allowfullscreen title="cortes tutorial holyrics6"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">6 - Descendo o Suporte do Projetor</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Utilizar o controle para descer o suporte do projetor. Assim que o suporte ultrapassar a linha de referência, pressionar o botão do meio para parar o movimento.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 7 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">7 - No computador, abrir o Holyrics.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/T-tGSA148iI" frameborder="0" allowfullscreen title="cortes tutorial holyrics7"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">7 - Abrindo o Holyrics</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        No computador, abrir o Holyrics.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 8 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">8 - Começar a separar as letras das canções do dia, iniciando por apagar (as que estiverem previamente carregadas ou a lista anterior).</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/yxTQPyDz6xw" frameborder="0" allowfullscreen title="cortes tutorial holyrics8"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">8 - Separando as Letras das Canções</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Começar a separar as letras das canções do dia, iniciando por apagar (as que estiverem previamente carregadas ou a lista anterior).
+                    </div>
+                </div>
             </div>
             <!-- Video Card 9 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">9 - Continuando o processo de separação das canções, você deve colocar o nome da letra, conferir se a letra bate (se está tudo OK e é a mesma música) e, por fim, arrastar a letra para a direita.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/m3d75jCj2F8" frameborder="0" allowfullscreen title="cortes tutorial holyrics9"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">9 - Processo de Separação das Canções</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Continuando o processo de separação das canções, você deve colocar o nome da letra, conferir se a letra bate (se está tudo OK e é a mesma música) e, por fim, arrastar a letra para a direita.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 10 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">10 - Prosseguindo com a organização das músicas, o processo envolve pesquisar a próxima música, achar a música, conferir a letra e jogá-la para a direita (para a lista de reprodução).</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/fVKGg99AqVA" frameborder="0" allowfullscreen title="cortes tutorial holyrics10"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">10 - Organizando as Músicas</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Prosseguindo com a organização das músicas, o processo envolve pesquisar a próxima música, achar a música, conferir a letra e jogá-la para a direita (para a lista de reprodução).
+                    </div>
+                </div>
             </div>
             <!-- Video Card 11 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">11 - Na seção de "mídia", você deve clicar duas vezes no "curso da manhã" para que os slides sejam atualizados automaticamente, e então checar se está tudo OK.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/jwFpNabcfxk" frameborder="0" allowfullscreen title="cortes tutorial holyrics11"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">11 - Atualizando Slides na Seção Mídia</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Na seção de "mídia", você deve clicar duas vezes no "culto da manhã" ou noite para que os slides sejam atualizados automaticamente, e então checar se está tudo OK.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 12 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">12 - Para ativar o plugin do BS (OBS), você deve ir em "ferramentas", selecionar "plugin holyics" e clicar em "iniciar servidor". Após isso, é essencial falar com o operador do OBS e fazer os testes da legenda para verificar se está tudo OK.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/1ViDG71O27o" frameborder="0" allowfullscreen title="cortes tutorial holyrics12"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">12 - Ativando Plugin do OBS</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Para ativar o plugin do BS (OBS), você deve ir em "ferramentas", selecionar "plugin holyics" e clicar em "iniciar servidor". Após isso, é essencial falar com o operador do OBS e fazer os testes da legenda para verificar se está tudo OK.
+                    </div>
+                </div>
             </div>
             <!-- Video Card 13 -->
             <div class="shorts-card">
-                <div class="card-body">
-                    <h5 class="card-title">13 - Após todas as preparações, é preciso esperar o momento de iniciar (o "valendo"). É crucial lembrar que problemas técnicos sempre vão acontecer, e o mais importante é ter o coração em querer servir.</h5>
-                </div>
                 <iframe src="https://www.youtube.com/embed/oTEKiN4v2x8" frameborder="0" allowfullscreen title="cortes tutorial holyrics13"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">13 - Momento de Iniciar o Culto</h5>
+                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
+                    <div class="description-text">
+                        Após todas as preparações, é preciso esperar o momento de iniciar (o "valendo"). É crucial lembrar que problemas técnicos sempre vão acontecer, e o mais importante é ter o coração em querer servir.
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -325,6 +409,19 @@
     <script src="assets/js/jquery-3.7.1.js"></script>
     <!-- Bootstrap 5 JS -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function toggleDescription(button) {
+            const descriptionText = button.nextElementSibling;
+            descriptionText.classList.toggle('show');
+
+            if (descriptionText.classList.contains('show')) {
+                button.textContent = 'Ocultar Descrição';
+            } else {
+                button.textContent = 'Descrição';
+            }
+        }
+    </script>
 </body>
 
 </html>
