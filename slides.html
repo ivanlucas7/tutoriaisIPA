@@ -122,10 +122,51 @@
             background: rgba(0, 59, 92, 0.96);
             color: #fff;
             text-align: center;
-            padding: 10px 0 6px 0;
+            padding: 1px 0 1px 0;
             font-size: 1rem;
             z-index: 100;
             box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07);
+        }
+
+        /* Estilo atualizado para vídeos shorts no formato vertical */
+        .shorts-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .shorts-card iframe {
+            width: 90%;
+            max-width: 300px;
+            height: auto;
+            aspect-ratio: 9 / 16;
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .shorts-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .shorts-card .card-body h5 {
+            font-size: 0.8rem;
+            color: #ffffff;
+            margin: 0;
         }
 
         @media (max-width: 600px) {
@@ -146,6 +187,15 @@
 
             .icon-btn i {
                 font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .shorts-card {
+                display: inline-block;
+                width: calc(33.33% - 20px);
+                margin: 10px;
+                vertical-align: top;
             }
         }
     </style>
@@ -175,74 +225,95 @@
         </div>
         <div class="row justify-content-center">
             <!-- Video Card 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/CSKMXR5v9YI" frameborder="0"
-                        allowfullscreen title="Aula 1 - Introdução ao Arduino"></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">1 - Comentário aqui</h5>
-                    </div>
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">1 - Este tutorial introduz todo o processo que o operador de Holyrics realiza desde a chegada até o início do culto.</h5>
                 </div>
+                <iframe src="https://www.youtube.com/embed/dtk5sUqS8rA" frameborder="0" allowfullscreen title="cortes tutorial holyrics1"></iframe>
             </div>
             <!-- Video Card 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/tSQNDqzjH4s" frameborder="0"
-                        allowfullscreen title="Aula 2 - Parte 1"></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">2 - Comentário aqui</h5>
-                    </div>
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">2 - O primeiro passo é ligar o disjuntor geral.</h5>
                 </div>
+                <iframe src="https://www.youtube.com/embed/WSLs1C_QpXQ" frameborder="0" allowfullscreen title="cortes tutorial holyrics2"></iframe>
             </div>
             <!-- Video Card 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/E0awADbmWgs" frameborder="0"
-                        allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">3 - Comentário aqui</h5>
-                    </div>
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">3 - O segundo passo é ligar o computador.</h5>
                 </div>
+                <iframe src="https://www.youtube.com/embed/IZt9b6qE3xE" frameborder="0" allowfullscreen title="cortes tutorial holyrics3"></iframe>
             </div>
             <!-- Video Card 4 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/twoLDJZlNBI" frameborder="0"
-                        allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">4 - Comentário aqui</h5>
-                    </div>
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">4 - Para ligar os projetores, você deve ir à cozinha, abrir o painel de energia e ligar os disjuntores específicos para o "cob" e o "projetor".</h5>
                 </div>
+                <iframe src="https://www.youtube.com/embed/azzni406oN0" frameborder="0" allowfullscreen title="cortes tutorial holyrics4"></iframe>
             </div>
             <!-- Video Card 5 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/kmkEXfdluNU" frameborder="0"
-                        allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">5 - Comentário aqui</h5>
-                    </div>
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">5 - Com o controle do projetor em mãos, aproximar-se do projetor e apertar o botão de ligar até ele começar a piscar.</h5>
                 </div>
+                <iframe src="https://www.youtube.com/embed/3X2iJBvL0pw" frameborder="0" allowfullscreen title="cortes tutorial holyrics5"></iframe>
             </div>
             <!-- Video Card 6 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/5iwz3tsLrjQ" frameborder="0"
-                        allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">6 - Comentário aqui</h5>
-                    </div>
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">6 - Utilizar o controle para descer o suporte do projetor. Assim que o suporte ultrapassar a linha de referência, pressionar o botão do meio para parar o movimento.</h5>
                 </div>
+                <iframe src="https://www.youtube.com/embed/UTyiH3VT77g" frameborder="0" allowfullscreen title="cortes tutorial holyrics6"></iframe>
             </div>
             <!-- Video Card 7 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/7UOQS4uAZEE" frameborder="0"
-                        allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">7 - Comentário aqui</h5>
-                    </div>
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">7 - No computador, abrir o Holyrics.</h5>
                 </div>
+                <iframe src="https://www.youtube.com/embed/T-tGSA148iI" frameborder="0" allowfullscreen title="cortes tutorial holyrics7"></iframe>
+            </div>
+            <!-- Video Card 8 -->
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">8 - Começar a separar as letras das canções do dia, iniciando por apagar (as que estiverem previamente carregadas ou a lista anterior).</h5>
+                </div>
+                <iframe src="https://www.youtube.com/embed/yxTQPyDz6xw" frameborder="0" allowfullscreen title="cortes tutorial holyrics8"></iframe>
+            </div>
+            <!-- Video Card 9 -->
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">9 - Continuando o processo de separação das canções, você deve colocar o nome da letra, conferir se a letra bate (se está tudo OK e é a mesma música) e, por fim, arrastar a letra para a direita.</h5>
+                </div>
+                <iframe src="https://www.youtube.com/embed/m3d75jCj2F8" frameborder="0" allowfullscreen title="cortes tutorial holyrics9"></iframe>
+            </div>
+            <!-- Video Card 10 -->
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">10 - Prosseguindo com a organização das músicas, o processo envolve pesquisar a próxima música, achar a música, conferir a letra e jogá-la para a direita (para a lista de reprodução).</h5>
+                </div>
+                <iframe src="https://www.youtube.com/embed/fVKGg99AqVA" frameborder="0" allowfullscreen title="cortes tutorial holyrics10"></iframe>
+            </div>
+            <!-- Video Card 11 -->
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">11 - Na seção de "mídia", você deve clicar duas vezes no "curso da manhã" para que os slides sejam atualizados automaticamente, e então checar se está tudo OK.</h5>
+                </div>
+                <iframe src="https://www.youtube.com/embed/jwFpNabcfxk" frameborder="0" allowfullscreen title="cortes tutorial holyrics11"></iframe>
+            </div>
+            <!-- Video Card 12 -->
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">12 - Para ativar o plugin do BS (OBS), você deve ir em "ferramentas", selecionar "plugin holyics" e clicar em "iniciar servidor". Após isso, é essencial falar com o operador do OBS e fazer os testes da legenda para verificar se está tudo OK.</h5>
+                </div>
+                <iframe src="https://www.youtube.com/embed/1ViDG71O27o" frameborder="0" allowfullscreen title="cortes tutorial holyrics12"></iframe>
+            </div>
+            <!-- Video Card 13 -->
+            <div class="shorts-card">
+                <div class="card-body">
+                    <h5 class="card-title">13 - Após todas as preparações, é preciso esperar o momento de iniciar (o "valendo"). É crucial lembrar que problemas técnicos sempre vão acontecer, e o mais importante é ter o coração em querer servir.</h5>
+                </div>
+                <iframe src="https://www.youtube.com/embed/oTEKiN4v2x8" frameborder="0" allowfullscreen title="cortes tutorial holyrics13"></iframe>
             </div>
         </div>
 
@@ -260,4 +331,3 @@
 </body>
 
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
