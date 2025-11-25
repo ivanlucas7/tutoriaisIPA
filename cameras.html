@@ -17,6 +17,68 @@
             font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
             color: #fff;
         }
+        /* Thumbnail / lightbox styles */
+        .video-thumb {
+            position: relative;
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        .video-thumb img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+            display: block;
+        }
+        .video-thumb .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 28px;
+        }
+        /* Mobile: ensure modal is vertically centered and fits viewport */
+        @media (max-width: 600px) {
+            #videoModal .modal-dialog {
+                max-width: 95vw !important;
+                margin: 0 auto;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #videoModal .modal-content {
+                width: 95vw;
+                max-height: 90vh;
+                overflow: hidden;
+                border-radius: 12px;
+            }
+            #videoModal .modal-body {
+                padding: 0;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #videoModal iframe {
+                width: 100% !important;
+                height: 80vh !important;
+                max-height: 80vh !important;
+                border-radius: 12px;
+            }
+        }
 
         .navbar {
             background: transparent !important;
@@ -241,6 +303,16 @@
                 <img src="assets/img/IPA.jpg" alt="IPAquarius Logo">
             </a>
         </div>
+        <!-- Lightbox modal for videos -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width:80vw;">
+                <div class="modal-content" style="background:#000;border:none;box-shadow:none;">
+                    <div class="modal-body p-0" style="height:auto;">
+                            <iframe id="videoPlayer" src="" title="Vídeo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:80vh;max-height:80vh;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <!-- Conteúdo principal estilo app -->
@@ -256,77 +328,67 @@
             </a>
         </div>
         <div class="row justify-content-center">
+            <!-- Video Card 1 (removed) -->
             <!-- Video Card 1 -->
-            <div class="shorts-card">
-                <iframe src="https://www.youtube.com/embed/dtk5sUqS8rA" frameborder="0" allowfullscreen title="cortes tutorial holyrics1"></iframe>
-                <div class="card-body">
-                    <h5 class="card-title">1 - Tutorial Holyrics</h5>
-                    <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
-                    <div class="description-text">
-                        Este tutorial introduz todo o processo que o operador de Holyrics realiza desde a chegada até o início do culto.
-                    </div>
-                </div>
-            </div>
-            <!-- Video Card 2 -->
             <div class="shorts-card">
                 <iframe src="https://www.youtube.com/embed/WSLs1C_QpXQ" frameborder="0" allowfullscreen title="cortes tutorial holyrics2"></iframe>
                 <div class="card-body">
-                    <h5 class="card-title">2 - Ligando o Disjuntor Geral</h5>
+                    <h5 class="card-title">1 - Ligando o Disjuntor Geral</h5>
                     <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
                     <div class="description-text">
                         O primeiro passo é ligar o disjuntor geral.
                     </div>
                 </div>
             </div>
-            <!-- Video Card 3 -->
+            <!-- Video Card 2 -->
             <div class="shorts-card">
                 <iframe src="https://www.youtube.com/embed/Ao_7-MP27Sk" frameborder="0" allowfullscreen title="cortes tutorial holyrics3"></iframe>
                 <div class="card-body">
-                    <h5 class="card-title">3 - Ligando a Régua de Tomada</h5>
+                    <h5 class="card-title">2 - Ligando a Régua de Tomada</h5>
                     <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
                     <div class="description-text">
                         Ligar a régua de tomada que fica embaixo da mesa.
                     </div>
                 </div>
             </div>
-            <!-- Video Card 4 -->
+            <!-- Video Card 3 -->
             <div class="shorts-card">
                 <iframe src="https://www.youtube.com/embed/-NCfwu_0cjA" frameborder="0" allowfullscreen title="cortes tutorial holyrics4"></iframe>
                 <div class="card-body">
-                    <h5 class="card-title">4 - Removendo as Coifas das Câmeras</h5>
+                    <h5 class="card-title">3 - Removendo as Coifas das Câmeras</h5>
                     <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
                     <div class="description-text">
                         Remover a coifa das câmeras, lembrando que há uma perto da cozinha e outra na porta de entrada.
                     </div>
                 </div>
             </div>
-            <!-- Video Card 5 -->
+            <!-- Video Card 4 -->
             <div class="shorts-card">
                 <iframe src="https://www.youtube.com/embed/1PBlZ2a1rbc" frameborder="0" allowfullscreen title="cortes tutorial holyrics5"></iframe>
                 <div class="card-body">
-                    <h5 class="card-title">5 - Configurando Presets de Câmera</h5>
+                    <h5 class="card-title">4 - Configurando Presets de Câmera</h5>
                     <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
                     <div class="description-text">
                         Com as câmeras e a controladora ligadas, fazer um preset: achar a posição desejada, apertar "preset", escolher o número desejado e apertar "enter".
                     </div>
                 </div>
             </div>
-            <!-- Video Card 6 -->
+            <!-- Video Card 5 -->
             <div class="shorts-card">
                 <iframe src="https://www.youtube.com/embed/3kSXySKgSWs" frameborder="0" allowfullscreen title="cortes tutorial holyrics6"></iframe>
                 <div class="card-body">
-                    <h5 class="card-title">6 - Momento Ideal para Presets</h5>
+                    <h5 class="card-title">5 - Momento Ideal para Presets</h5>
                     <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
                     <div class="description-text">
                         Fazer os presets durante um ensaio que ocorre antes do culto é um bom momento para essa configuração.
                     </div>
                 </div>
             </div>
-            <!-- Video Card 7 -->
+            <!-- Video Card 6 -->
             <div class="shorts-card">
                 <iframe src="https://www.youtube.com/embed/1O6s-J1QSdc" frameborder="0" allowfullscreen title="cortes tutorial holyrics7"></iframe>
                 <div class="card-body">
-                    <h5 class="card-title">7 - Mentalidade de Serviço</h5>
+                    <h5 class="card-title">6 - Mentalidade de Serviço</h5>
                     <button class="description-btn" onclick="toggleDescription(this)">Descrição</button>
                     <div class="description-text">
                         Lembrar que problemas técnicos sempre acontecem, e o importante é o coração em querer servir.
@@ -355,6 +417,95 @@
                 button.textContent = 'Descrição';
             }
         }
+
+        // Lightbox + thumbnail replacement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Exibir todas as descrições ao carregar
+            try {
+                document.querySelectorAll('.description-text').forEach(function(el) {
+                    el.classList.add('show');
+                });
+                document.querySelectorAll('.description-btn').forEach(function(btn) {
+                    const descriptionText = btn.nextElementSibling;
+                    if (descriptionText && descriptionText.classList.contains('show')) {
+                        btn.textContent = 'Ocultar Descrição';
+                    }
+                });
+            } catch (err) { /* ignore */ }
+
+            // history/modal helpers
+            var modalEl = document.getElementById('videoModal');
+            var playerEl = document.getElementById('videoPlayer');
+            window.__videoModalHistoryAdded = window.__videoModalHistoryAdded || false;
+            window.__videoModalClosingFromPopstate = window.__videoModalClosingFromPopstate || false;
+
+            window.addEventListener('popstate', function(e) {
+                try {
+                    if (window.__videoModalHistoryAdded && modalEl && modalEl.classList.contains('show')) {
+                        window.__videoModalClosingFromPopstate = true;
+                        var inst = bootstrap.Modal.getInstance(modalEl);
+                        if (inst) inst.hide();
+                    }
+                } catch (err) { /* ignore */ }
+            });
+
+            document.querySelectorAll('.shorts-card iframe').forEach(function(iframe) {
+                try {
+                    const src = iframe.getAttribute('src') || '';
+                    let id = null;
+                    const m = src.match(/\/embed\/([^?/\\]+)/);
+                    if (m && m[1]) id = m[1];
+                    else {
+                        const parts = src.split('/');
+                        id = parts[parts.length-1].split('?')[0];
+                    }
+                    if (!id) return;
+
+                    const thumbUrl = 'https://img.youtube.com/vi/' + id + '/hqdefault.jpg';
+
+                    const thumb = document.createElement('a');
+                    thumb.className = 'video-thumb';
+                    thumb.setAttribute('data-video-id', id);
+                    thumb.innerHTML = '<img src="'+thumbUrl+'" alt="Vídeo"><div class="play-overlay">▶</div>';
+
+                    iframe.parentNode.insertBefore(thumb, iframe);
+                    iframe.style.display = 'none';
+
+                    // click handler
+                    thumb.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var vid = this.getAttribute('data-video-id');
+                        var url = 'https://www.youtube-nocookie.com/embed/' + vid + '?rel=0&modestbranding=1&autoplay=1&playsinline=1';
+
+                        if (!window.__videoModalHistoryAdded) {
+                            try { history.pushState({videoModal: true}, '', location.href); } catch (err) {}
+                            window.__videoModalHistoryAdded = true;
+                        } else {
+                            try { history.replaceState({videoModal: true}, '', location.href); } catch (err) {}
+                        }
+
+                        try { playerEl.setAttribute('src', url); } catch (e) {}
+                        var modalInstance = new bootstrap.Modal(modalEl);
+                        modalInstance.show();
+
+                        modalEl.addEventListener('hidden.bs.modal', function () {
+                            try { playerEl.setAttribute('src', ''); } catch (e) {}
+                            if (window.__videoModalHistoryAdded) {
+                                if (window.__videoModalClosingFromPopstate) {
+                                    window.__videoModalHistoryAdded = false;
+                                    window.__videoModalClosingFromPopstate = false;
+                                } else {
+                                    window.__videoModalHistoryAdded = false;
+                                    try { history.back(); } catch (err) {}
+                                }
+                            }
+                        }, { once: true });
+                    });
+                } catch (err) {
+                    console.warn('Could not create thumbnail for iframe', err);
+                }
+            });
+        });
     </script>
 </body>
 
